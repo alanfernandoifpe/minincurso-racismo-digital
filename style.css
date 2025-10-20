@@ -1,0 +1,405 @@
+/* --- GLOBAIS E RESET --- */
+:root {
+    --color-background: #121212; 
+    --color-surface: #1e1e1e;   
+    --color-text-primary: #f0f0f0;  
+    --color-text-secondary: #a0a0a0;
+    --color-accent: #FFD700;        
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-text-secondary);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* --- BOTÕES --- */
+.btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-top: 0.5rem; 
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #fff;
+}
+
+.btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+}
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+/* --- ESTRUTURA DAS PÁGINAS --- */
+.page {
+    display: none; 
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#page-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* CORREÇÃO DA HOME (Fora de Escopo) */
+#page-home .content-wrapper {
+    max-width: 700px;
+    padding: 2.5rem;
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#page-home h1 {
+    font-size: 2.8rem; /* Reduzido para caber melhor na "caixa" */
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+}
+
+#page-home h2 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+#page-home p {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* --- LAYOUT DO CURSO --- */
+#page-course {
+    display: grid;
+    grid-template-columns: 280px 1fr; 
+    min-height: 100vh;
+}
+
+/* Navegação (Sidebar) */
+.module-nav {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    order: 1; 
+}
+
+.module-nav h3 {
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+}
+
+.module-nav ul {
+    list-style: none;
+    margin-top: 1rem;
+    flex-grow: 1; 
+}
+
+.module-nav .nav-link {
+    display: block;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    font-weight: 700;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.module-nav .nav-link:hover {
+    background-color: #333;
+    color: var(--color-text-primary);
+}
+
+.module-nav .nav-link.active-module {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+}
+
+.btn-home {
+    background: none;
+    border: 1px solid var(--color-text-secondary);
+    color: var(--color-text-secondary);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-home:hover {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+}
+
+
+/* Conteúdo (Principal) */
+.module-content {
+    padding: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    order: 2; 
+}
+
+.module {
+    display: none; 
+    animation: fadeIn 0.5s;
+}
+
+.module.active-content {
+    display: block; 
+}
+
+.module-footer {
+    margin-top: 3rem;
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    #page-home h1 {
+        font-size: 2.5rem;
+    }
+    #page-home h2 {
+        font-size: 1.2rem;
+    }
+    #page-home .content-wrapper {
+        padding: 1.5rem;
+    }
+
+    #page-course {
+        grid-template-columns: 1fr; 
+    }
+
+    .module-nav {
+        border-right: none;
+        border-bottom: 1px solid #333;
+        order: 1; 
+    }
+
+    .module-content {
+        order: 2; 
+        padding: 1.5rem;
+    }
+
+    .module-nav ul {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto; 
+        padding-bottom: 1rem;
+        flex-grow: 0;
+    }
+    .module-nav li {
+        white-space: nowrap; 
+        flex-shrink: 0;
+    }
+    .module-nav .btn-home {
+        display: none; 
+    }
+}
+
+/* Animação simples de Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ESTILOS DO CONTEÚDO (ADIÇÕES) --- */
+
+.module h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary); 
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2rem; 
+    margin-bottom: 0.75rem;
+}
+
+.module ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.module li {
+    position: relative;
+    padding-left: 2rem; 
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary); 
+    line-height: 1.5;
+}
+
+.module li::before {
+    content: ''; 
+    position: absolute;
+    left: 0.5rem;
+    top: 0.6em; 
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent); 
+    border-radius: 2px; 
+}
+
+.module li a {
+    color: var(--color-accent);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.module li a:hover {
+    color: #fff; 
+    text-decoration: underline;
+}
+
+/* --- ESTILO DA LOGO (MOVIDA E CORRIGIDA) --- */
+
+/* REGRA ANTIGA .home-logo FOI REMOVIDA */
+
+/* Nova regra para a logo na barra de navegação */
+.nav-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px; /* Adiciona cantos arredondados à imagem */
+    /* A linha 'filter' foi REMOVIDA para mostrar a cor original (azul e branco) */
+    transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .nav-logo {
+        max-width: 100px;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* --- NOVOS ESTILOS PROFISSIONAIS --- */
+
+/* 1. Rodapé (Footer) */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-surface);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    border-top: 1px solid #333;
+    width: 100%;
+}
+/* Esconde o rodapé da página inicial */
+#page-home + footer {
+    display: none;
+}
+
+/* 2. Barra de Progresso */
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-surface);
+    grid-column: 1 / -1; 
+    order: 0; 
+}
+.progress-bar {
+    height: 100%;
+    width: 0%; 
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+@media (max-width: 768px) {
+    .progress-bar-container {
+        grid-column: auto; 
+    }
+}
+
+/* 3. Feedback do Quiz */
+.quiz-question {
+    background: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+.quiz-question label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.quiz-question .btn-secondary {
+    margin-top: 1rem;
+}
+.quiz-feedback {
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+.feedback-correto { color: #76c893; } /* Verde */
+.feedback-incorreto { color: #e63946; } /* Vermelho */
+
+/* 4. Input do Certificado */
+.certificate-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background: var(--color-surface);
+    border: 1px solid #333;
+    color: var(--color-text-primary);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}

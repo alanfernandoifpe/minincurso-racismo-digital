@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minicurso: Racismo Digital</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta property="og:title" content="Minicurso: Racismo Digital">
+    <meta property="og:description" content="Aprenda a identificar e combater o viés racial em algoritmos, IAs e redes sociais.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="page" id="page-home">
+        <div class="content-wrapper">
+            <h1>Racismo Digital</h1>
+            <h2>Desconstruindo o Algoritmo.</h2>
+            <p>Este minicurso explora como o viés racial se manifesta em plataformas online, inteligência artificial e redes sociais.</p>
+            
+            <button class="btn" onclick="navigateTo('page-course', true)">Iniciar Minicurso</button>
+        </div>
+    </section>
+
+    <section class="page" id="page-course">
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="course-progress-bar"></div>
+        </div>
+
+        <nav class="module-nav">
+            <div class="nav-header">
+                <img src="unegro-logo.png" alt="Logo da Unegro" class="nav-logo">
+                <h3>Módulos</h3>
+            </div>
+            <ul>
+                <li><a href="#" class="nav-link active-module" onclick="showModule('module-1', this)">1. O que é?</a></li>
+                <li><a href="#" class="nav-link" onclick="showModule('module-2', this)">2. O Viés no Código</a></li>
+                <li><a href="#" class="nav-link" onclick="showModule('module-3', this)">3. Redes Sociais</a></li>
+                <li><a href="#" class="nav-link" onclick="showModule('module-4', this)">4. Como Agir?</a></li>
+                <li><a href="#" class="nav-link" onclick="showModule('module-5', this)">5. Quiz Rápido</a></li>
+                <li><a href="#" class="nav-link" onclick="showModule('module-6', this)">6. Recursos</a></li>
+            </ul>
+            <button class="btn-home" onclick="navigateTo('page-home', false)">Voltar ao Início</button>
+        </nav>
+        
+        <main class="module-content">
+            
+            <article class="module active-content" id="module-1">
+                <h2>1. O que é Racismo Digital?</h2>
+                <p>O racismo digital não é apenas o ato de cometer injúria racial online. É um fenômeno complexo que se divide em duas grandes frentes:</p>
+                <h4>1. Racismo Interpessoal Online</h4>
+                <p>Esta é a forma mais visível. Inclui discurso de ódio, cyberbullying direcionado, criação de memes depreciativos e o assédio coordenado em seções de comentários ou mensagens diretas contra indivíduos ou grupos por causa de sua raça ou etnia.</p>
+                <h4>2. Racismo Sistêmico ou Algorítmico</h4>
+                <p>Esta é a forma mais sutil e perigosa. Ocorre quando os próprios sistemas, códigos e algoritmos que usamos todos os dias perpetuam ou amplificam vieses raciais. Isso acontece não porque o computador "odeia" alguém, mas porque ele foi treinado com dados do mundo real, que já são repletos de racismo histórico e estrutural.</p>
+                <p>Neste curso, vamos focar principalmente em como identificar e combater essa segunda forma de racismo.</p>
+                <div class="module-footer">
+                    <button class="btn" onclick="showModule('module-2')">Próximo: Viés no Código &rarr;</button>
+                </div>
+            </article>
+            
+            <article class="module" id="module-2">
+                <h2>2. O Viés no Código e na IA</h2>
+                <p>Algoritmos não são neutros. Eles são produtos de seus criadores e, mais importante, dos dados com os quais são alimentados. Se os dados de treinamento refletem um passado racista, a Inteligência Artificial (IA) aprenderá a ser racista.</p>
+                <p>Isso se manifesta de várias formas:</p>
+                <ul>
+                    <li><strong>Reconhecimento Facial:</strong> Estudos mostram que os principais sistemas de reconhecimento facial têm taxas de erro drasticamente maiores ao identificar rostos de pessoas negras, especialmente mulheres. Isso pode levar a prisões injustas.</li>
+                    <li><strong>Sistemas de Justiça:</strong> Softwares usados em tribunais dos EUA para prever a "chance de reincidência" de um crime comprovadamente atribuíam pontuações de risco mais altas a réus negros do que a réus brancos com históricos semelhantes.</li>
+                    <li><strong>Filtros de "Beleza":</strong> A maioria dos filtros em redes sociais que "embelezam" o rosto tende a afinar narizes, clarear a pele e alisar cabelos, promovendo um padrão de beleza eurocêntrico.</li>
+                    <li><strong>Resultados de Busca:</strong> Antigos (e por vezes atuais) algoritmos de busca associavam termos pejorativos a buscas por "mulher negra" ou "cabelo crespo", reforçando estereótipos.</li>
+                </ul>
+                <div class="module-footer">
+                    <button class="btn btn-secondary" onclick="showModule('module-1')">&larr; Anterior</button>
+                    <button class="btn" onclick="showModule('module-3')">Próximo: Redes Sociais &rarr;</button>
+                </div>
+            </article>
+            
+            <article class="module" id="module-3">
+                <h2>3. Racismo nas Redes Sociais</h2>
+                <p>Nas redes sociais, o racismo vai além dos comentários de ódio. O próprio design das plataformas pode silenciar vozes negras e indígenas enquanto amplifica o discurso de ódio.</p>
+                <h4>Moderação de Conteúdo Seletiva</h4>
+                <p>É comum que criadores de conteúdo negros tenham seus posts denunciando o racismo removidos por "violar as diretrizes da comunidade" (frequentemente por citar o próprio insulto que receberam). Enquanto isso, os posts que cometeram o racismo original permanecem no ar.</p>
+                <h4>Shadowbanning (Banimento Fantasma)</h4>
+                <p>Ativistas e criadores relatam uma queda abrupta no engajamento e alcance de suas publicações assim que começam a falar sobre pautas raciais. Isso é conhecido como <em>shadowban</em>: a plataforma diminui secretamente a visibilidade de um usuário sem notificá-lo.</p>
+                <h4>Algoritmos de Engajamento</h4>
+                <p>Os algoritmos são projetados para maximizar o tempo de tela. Conteúdo polêmico, chocante e raivoso (muitas vezes racista) gera mais cliques, comentários e compartilhamentos. Com isso, a plataforma pode acabar "recomendando" o ódio, simplesmente porque ele é "popular".</p>
+                <div class="module-footer">
+                    <button class="btn btn-secondary" onclick="showModule('module-2')">&larr; Anterior</button>
+                    <button class="btn" onclick="showModule('module-4')">Próximo: Como Agir &rarr;</button>
+                </div>
+            </article>
+            
+            <article class="module" id="module-4">
+                <h2>4. Como Agir? (Letramento Digital)</h2>
+                <p>Saber que o problema existe é o primeiro passo. O segundo é agir. O combate ao racismo digital exige uma combinação de ações individuais e pressão coletiva.</p>
+                <h4>Ações Individuais:</h4>
+                <ul>
+                    <li><strong>Denuncie (Corretamente):</strong> Sempre denuncie o conteúdo racista usando as ferramentas da plataforma. Tire prints (capturas de tela) antes que seja apagado.</li>
+                    <li><strong>Não Engaje com o Ódio:</strong> Não responda, não comente e não republique o post de ódio (mesmo para criticar). O algoritmo entende isso como "engajamento" e mostra o post para mais pessoas. A melhor tática é: Denunciar, Bloquear e Ignorar.</li>
+                    <li><strong>Apoie as Vítimas:</strong> Envie mensagens de apoio, siga o trabalho da pessoa e engaje positivamente com o conteúdo dela para "furar a bolha" do <em>shadowban</em>.</li>
+                </ul>
+                <h4>Ações Coletivas:</h4>
+                <ul>
+                    <li><strong>Siga e Amplifique:</strong> Siga ativistas, acadêmicos e criadores de conteúdo negros e indígenas. Compartilhe o trabalho deles. Isso ajuda a treinar o algoritmo (o seu e o dos seus amigos) a valorizar essas vozes.</li>
+                    <li><strong>Cobre as "Big Techs":</strong> Participe de petições e pressione publicamente as plataformas por transparência em seus algoritmos de moderação e por maior diversidade em suas equipes de engenharia.</li>
+                </ul>
+                <div class="module-footer">
+                    <button class="btn btn-secondary" onclick="showModule('module-3')">&larr; Anterior</button>
+                    <button class="btn" onclick="showModule('module-5')">Próximo: Quiz &rarr;</button>
+                </div>
+            </article>
+            
+            <article class="module" id="module-5">
+                <h2>5. Quiz Rápido</h2>
+                <p>Vamos testar o que aprendemos. Clique em "Verificar" para ver o feedback de cada resposta.</p>
+    
+                <div class="quiz-question">
+                    <h4>Pergunta 1: Qual a principal fonte do "racismo algorítmico"?</h4>
+                    <label><input type="radio" name="q1" value="errado"> Uma falha técnica aleatória ou "bug" no sistema.</label>
+                    <label><input type="radio" name="q1" value="correto"> O treinamento da IA com dados do mundo real que já contêm vieses históricos.</label>
+                    <label><input type="radio" name="q1" value="errado"> A ação de hackers que inserem código malicioso nos algoritmos.</label>
+                    <button class="btn btn-secondary" onclick="checkQuiz('q1')">Verificar</button>
+                    <p class="quiz-feedback" id="feedback-q1"></p>
+                </div>
+                
+                <div class="quiz-question">
+                    <h4>Pergunta 2: O que é "Shadowbanning"?</h4>
+                    <label><input type="radio" name="q2" value="errado"> O ato de banir permanentemente um usuário por discurso de ódio.</label>
+                    <label><input type="radio" name="q2" value="errado"> Um vírus que "apaga" posts antigos de um usuário.</label>
+                    <label><input type="radio" name="q2" value="correto"> A diminuição secreta do alcance de um usuário pela plataforma, sem notificá-lo.</label>
+                    <button class="btn btn-secondary" onclick="checkQuiz('q2')">Verificar</button>
+                    <p class="quiz-feedback" id="feedback-q2"></p>
+                </div>
+            
+                <div class="quiz-question">
+                    <h4>Pergunta 3: Qual a forma mais eficaz de reagir a um post de ódio para diminuir seu alcance?</h4>
+                    <label><input type="radio" name="q3" value="errado"> Comentar no post criticando o autor e explicando por que ele está errado.</label>
+                    <label><input type="radio" name="q3" value="correto"> Denunciar o post, bloquear o autor e não interagir (não comentar ou compartilhar).</label>
+                    <label><input type="radio" name="q3" value="errado"> Compartilhar o post em seu próprio perfil para que seus seguidores também denunciem.</label>
+                    <button class="btn btn-secondary" onclick="checkQuiz('q3')">Verificar</button>
+                    <p class="quiz-feedback" id="feedback-q3"></p>
+                </div>
+                
+                <div class="module-footer">
+                    <button class="btn btn-secondary" onclick="showModule('module-4')">&larr; Anterior</button>
+                    <button class="btn" onclick="showModule('module-6')">Ver Recursos &rarr;</button>
+                </div>
+            </article>
+
+             <article class="module" id="module-6">
+                <h2>6. Recursos Adicionais</h2>
+                <p>O aprendizado não termina aqui. Estas são algumas organizações, documentários e leituras essenciais para se aprofundar no tema:</p>
+                
+                <h4>Organizações e Coletivos:</h4>
+                <ul>
+                    <li><a href="https://www.safernet.org.br/" target="_blank">SaferNet Brasil</a></li>
+                    <li><a href="https://artigo19.org/" target="_blank">Artigo 19</a></li>
+                    <li><a href="https://www.ajl.org/" target="_blank">Algorithm Justice League</a></li>
+                    <li><a href="https://www.direitosnaredes.org.br/" target="_blank">Coalizão Direitos na Rede</a></li>
+                    <li><a href="https://www.instagram.com/unegrobrasil/" target="_blank">Unegro (União de Negras e Negros pela Igualdade)</a></li>
+                </ul>
+            
+                <h4>Documentários e Livros:</h4>
+                <ul>
+                    <li><strong>Documentário:</strong> "Coded Bias" (Disponível na Netflix)</li>
+                    <li><strong>Livro:</strong> "Algoritmos de Opressão" (de Safiya Umoja Noble)</li>
+                    <li><strong>Livro:</strong> "Automating Inequality" (de Virginia Eubanks)</li>
+                </ul>
+
+                <h4 style="margin-top: 3rem;">Gere seu Certificado</h4>
+                <p>Parabéns por concluir o minicurso! Digite seu nome como deve aparecer no certificado e clique em "Gerar" para baixar seu PDF.</p>
+                <input type="text" id="certificate-name" placeholder="Seu nome completo" class="certificate-input">
+                <button class="btn" onclick="generateCertificate()">Gerar Certificado (PDF)</button>
+            
+                <div class="module-footer" style="margin-top: 2rem;">
+                    <button class="btn btn-secondary" onclick="showModule('module-5')">&larr; Anterior</button>
+                    <button class="btn" onclick="navigateTo('page-home', false)">Concluir (Início)</button>
+                </div>
+            </article>
+
+        </main>
+    </section>
+    
+    <footer>
+        <p>Desenvolvido como um projeto de código aberto. Apoiado pela Unegro.</p>
+        <p>Todo o conteúdo é baseado em pesquisas de especialistas. Veja o Módulo 6 para a bibliografia.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
