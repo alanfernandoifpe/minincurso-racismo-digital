@@ -37,20 +37,26 @@
             <div class="progress-bar" id="course-progress-bar"></div>
         </div>
 
-        <nav class="module-nav">
+        <nav class="module-nav" id="module-nav">
             <div class="nav-header">
                 <img src="unegro-logo.png" alt="Logo da Unegro" class="nav-logo">
                 <h3>Módulos</h3>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir Menu" aria-expanded="false">
+                    &#9776; </button>
             </div>
-            <ul>
-                <li><a href="#" class="nav-link active-module" onclick="showModule('module-1', this)">1. O que é?</a></li>
-                <li><a href="#" class="nav-link" onclick="showModule('module-2', this)">2. O Viés no Código</a></li>
-                <li><a href="#" class="nav-link" onclick="showModule('module-3', this)">3. Redes Sociais</a></li>
-                <li><a href="#" class="nav-link" onclick="showModule('module-4', this)">4. Como Agir?</a></li>
-                <li><a href="#" class="nav-link" onclick="showModule('module-5', this)">5. Quiz Rápido</a></li>
-                <li><a href="#" class="nav-link" onclick="showModule('module-6', this)">6. Recursos</a></li>
-            </ul>
-            <button class="btn-home" onclick="navigateTo('page-home', false)">Voltar ao Início</button>
+            
+            <div class="nav-content-collapsible" id="nav-content-collapsible">
+                <ul>
+                    <li><a href="#" class="nav-link active-module" onclick="showModule('module-1', this)">1. O que é?</a></li>
+                    <li><a href="#" class="nav-link" onclick="showModule('module-2', this)">2. O Viés no Código</a></li>
+                    <li><a href="#" class="nav-link" onclick="showModule('module-3', this)">3. Redes Sociais</a></li>
+                    <li><a href="#" class="nav-link" onclick="showModule('module-4', this)">4. Como Agir?</a></li>
+                    <li><a href="#" class="nav-link" onclick="showModule('module-5', this)">5. Quiz Rápido</a></li>
+                    <li><a href="#" class="nav-link" onclick="showModule('module-6', this)">6. Recursos</a></li>
+                </ul>
+                <button class="btn-home" onclick="navigateTo('page-home', false)">Voltar ao Início</button>
+            </div>
         </nav>
         
         <main class="module-content">
@@ -122,7 +128,7 @@
             <article class="module" id="module-5">
                 <h2>5. Quiz Rápido</h2>
                 <p>Vamos testar o que aprendemos. Clique em "Verificar" para ver o feedback de cada resposta.</p>
-    
+        
                 <div class="quiz-question">
                     <h4>Pergunta 1: Qual a principal fonte do "racismo algorítmico"?</h4>
                     <label><input type="radio" name="q1" value="errado"> Uma falha técnica aleatória ou "bug" no sistema.</label>
@@ -156,7 +162,7 @@
                 </div>
             </article>
 
-             <article class="module" id="module-6">
+            <article class="module" id="module-6">
                 <h2>6. Recursos Adicionais</h2>
                 <p>O aprendizado não termina aqui. Estas são algumas organizações, documentários e leituras essenciais para se aprofundar no tema:</p>
                 
