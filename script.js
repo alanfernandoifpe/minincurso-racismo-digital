@@ -184,3 +184,43 @@ function generateCertificate() {
     
     doc.save(`Certificado-Racismo-Digital-${name}.pdf`);
 }
+
+
+/* --- NOVO: INICIALIZAÇÃO DO MENU MOBILE --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('module-nav');
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const collapsibleContent = document.getElementById('nav-content-collapsible');
+    const navLinks = document.querySelectorAll('.module-nav .nav-link');
+
+    if (toggleBtn && nav && collapsibleContent) {
+        toggleBtn.addEventListener('click', () => {
+            // Adiciona/Remove a classe .nav-open do <nav>
+            const isOpen = nav.classList.toggle('nav-open');
+            
+            // Atualiza o ícone do botão e acessibilidade
+            if (isOpen) {
+                toggleBtn.innerHTML = '&#x2715;'; // Ícone 'X'
+                toggleBtn.setAttribute('aria-expanded', 'true');
+                toggleBtn.setAttribute('aria-label', 'Fechar Menu');
+            } else {
+                toggleBtn.innerHTML = '&#9776;'; // Ícone Hamburger
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.setAttribute('aria-label', 'Abrir Menu');
+            }
+        });
+    }
+
+    // Fecha o menu ao clicar em um link (Boa UX)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Só fecha se o menu estiver aberto (em modo mobile)
+            if (window.innerWidth <= 768 && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+                toggleBtn.innerHTML = '&#9776;'; // Reseta ícone
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.setAttribute('aria-label', 'Abrir Menu');
+            }
+        });
+    });
+});
