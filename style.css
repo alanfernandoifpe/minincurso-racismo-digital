@@ -202,9 +202,21 @@ a {
     flex-wrap: wrap; 
 }
 
+/* --- NOVO: BOTÃO HAMBÚRGUER (ESCONDIDO NO DESKTOP) --- */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+}
 
-/* --- RESPONSIVIDADE --- */
+
+/* --- RESPONSIVIDADE (BLOCO TOTALMENTE ATUALIZADO) --- */
 @media (max-width: 768px) {
+    /* Estilos da Home (sem alteração) */
     #page-home h1 {
         font-size: 2.5rem;
     }
@@ -215,36 +227,87 @@ a {
         padding: 1.5rem;
     }
 
+    /* Layout do Curso (coluna única) */
     #page-course {
         grid-template-columns: 1fr; 
     }
+
+    /* --- INÍCIO: NOVOS ESTILOS DO MENU RESPONSIVO --- */
 
     .module-nav {
         border-right: none;
         border-bottom: 1px solid #333;
         order: 1; 
+        padding: 1rem; /* Padding reduzido */
     }
+
+    .nav-header {
+        display: flex;
+        justify-content: flex-start; /* Alinha logo/título à esquerda */
+        align-items: center;
+        width: 100%;
+    }
+    
+    .nav-logo {
+        /* Sobrescreve o estilo de desktop */
+        display: block;
+        margin: 0;
+        margin-right: 1rem; /* Espaço entre logo e título */
+        max-width: 100px; /* Logo menor */
+        margin-bottom: 0;
+    }
+
+    .module-nav h3 {
+        /* Remove a borda e margem no mobile */
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: block; /* Mostra o botão */
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+    
+    /* Esconde o conteúdo do menu por padrão */
+    .nav-content-collapsible {
+        display: none;
+        margin-top: 1rem; /* Espaço do header para o menu */
+    }
+    
+    /* Regra para mostrar o menu quando a classe .nav-open for adicionada via JS */
+    .module-nav.nav-open .nav-content-collapsible {
+        display: block;
+    }
+
+    /* Remove os estilos de scroll horizontal do CSS antigo */
+    .module-nav ul {
+        display: block; /* Volta a ser uma lista vertical */
+        flex-direction: column;
+        overflow-x: hidden;
+        padding-bottom: 0;
+        flex-grow: 1;
+    }
+    .module-nav li {
+        white-space: normal;
+        flex-shrink: 1;
+    }
+    
+    /* Garante que o botão "Voltar ao Início" apareça no menu mobile */
+    .module-nav .btn-home {
+        display: block;
+        width: 100%; /* Ocupa a largura toda */
+        margin-top: 1rem;
+    }
+
+    /* --- FIM: NOVOS ESTILOS DO MENU RESPONSIVO --- */
 
     .module-content {
         order: 2; 
         padding: 1.5rem;
     }
-
-    .module-nav ul {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto; 
-        padding-bottom: 1rem;
-        flex-grow: 0;
-    }
-    .module-nav li {
-        white-space: nowrap; 
-        flex-shrink: 0;
-    }
-    .module-nav .btn-home {
-        display: none; 
-    }
 }
+
 
 /* Animação simples de Fade-in */
 @keyframes fadeIn {
@@ -301,10 +364,6 @@ a {
 }
 
 /* --- ESTILO DA LOGO (MOVIDA E CORRIGIDA) --- */
-
-/* REGRA ANTIGA .home-logo FOI REMOVIDA */
-
-/* Nova regra para a logo na barra de navegação */
 .nav-logo {
     max-width: 150px;
     height: auto;
@@ -312,8 +371,7 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 8px; /* Adiciona cantos arredondados à imagem */
-    /* A linha 'filter' foi REMOVIDA para mostrar a cor original (azul e branco) */
+    border-radius: 8px; 
     transition: transform 0.2s ease;
 }
 
@@ -321,12 +379,7 @@ a {
     transform: scale(1.03);
 }
 
-@media (max-width: 768px) {
-    .nav-logo {
-        max-width: 100px;
-        margin-bottom: 1rem;
-    }
-}
+/* (Regra da logo no mobile já está dentro da @media query) */
 
 
 /* --- NOVOS ESTILOS PROFISSIONAIS --- */
