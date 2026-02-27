@@ -4,10 +4,11 @@ Este é um projeto de código aberto que fornece um minicurso interativo em form
 
 O projeto foi desenvolvido com o apoio da **Unegro (União de Negras e Negros pela Igualdade)**.
 
-**[➡️ Acesse a demonstração ao vivo aqui](https://SEU-LINK-DO-VERCEL-AQUI.vercel.app/)** *(Substitua pelo link que você obterá ao fazer o deploy no Vercel/Netlify)*
+Acesse: "https://minincurso-racismo-digital.vercel.app/"
 
-![Captura de Tela da Aplicação](https://i.imgur.com/link-para-sua-imagem.png)
-*(Recomendado: Tire um print bonito da sua aplicação, suba em um site como [Imgur](https://imgur.com/upload) e cole o link aqui)*
+<img width="679" height="360" alt="image" src="https://github.com/user-attachments/assets/69d478e8-f097-4f24-8b2a-4d1ec414ae4b" />
+
+
 
 ---
 
@@ -74,6 +75,3 @@ Contribuições são muito bem-vindas! Se você tem sugestões de melhoria, corr
 
 ---
 
-## 📜 Licença
-
-Este projeto é distribuído sob a licença **MIT**. Veja o arquivo `LICENSE` (você pode criar um) para mais detalhes.
